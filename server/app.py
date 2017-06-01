@@ -21,6 +21,14 @@ def mockdefault():
     return ['OK']
 
 
+@route("/rpc/communication.sendMail")
+def mockdefault():
+    serelize_request = Serelize_Request()
+    w = WriteToFileLog(serelize_request)
+    w.write_to_file()
+    return ['OK']
+
+
 @route("/bob")
 def mockdefault():
     serelize_request = Serelize_Request()
