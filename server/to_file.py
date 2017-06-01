@@ -15,7 +15,7 @@ class WriteToFileLog:
         body = self.body
 
         str_to_log = str_to_log + '\n' + 'Params: ' + params + '\n\t' \
-                     + 'Headers: ' + headers + '\n' + '\n\t' + 'BODY: ' + str(body)
+                     + 'Headers: ' + headers + '\n' + '\n\t' + 'BODY: ' + str(body) + '\n'
         dash = '-'
         str_to_log = str_to_log + dash * 100
         f = open('/app/log/bottlesite.all.log', 'a')
