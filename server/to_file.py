@@ -18,6 +18,6 @@ class WriteToFileLog:
                      + 'Headers: ' + headers + '\n' + '\n\t' + 'BODY: ' + str(body)
         dash = '-'
         str_to_log = str_to_log + dash * 100
-        f = open('/var/log/bottlesite.all.log', 'a')
+        f = open('/app/log/bottlesite.all.log', 'a')
         f.write(str_to_log)
         f.close()
