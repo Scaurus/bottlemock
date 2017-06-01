@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from bottle import route, run, template, post, get
+from bottle import route, run, template, post, get, request
 
 from to_file import WriteToFileLog
 from serialize_request import Serelize_Request
@@ -16,7 +16,8 @@ def index():
 @route("/mockdefault")
 def mockdefault():
     serelize_request = Serelize_Request()
-    w = WriteToFileLog(serelize_request)
+    body = request.body.read()
+    w = WriteToFileLog(serelize_request, body)
     w.write_to_file()
     return ['OK']
 
@@ -24,7 +25,8 @@ def mockdefault():
 @post("/rpc/communication.sendMail")
 def mockdefault():
     serelize_request = Serelize_Request()
-    w = WriteToFileLog(serelize_request)
+    body = request.body.read()
+    w = WriteToFileLog(serelize_request, body)
     w.write_to_file()
     return ['OK']
 
@@ -32,7 +34,8 @@ def mockdefault():
 @get("/rpc/communication.sendMail")
 def mockdefault():
     serelize_request = Serelize_Request()
-    w = WriteToFileLog(serelize_request)
+    body = request.body.read()
+    w = WriteToFileLog(serelize_request, body)
     w.write_to_file()
     return ['OK']
 
@@ -41,7 +44,8 @@ def mockdefault():
 @post("/bob")
 def mockdefault():
     serelize_request = Serelize_Request()
-    w = WriteToFileLog(serelize_request)
+    body = request.body.read()
+    w = WriteToFileLog(serelize_request, body)
     w.write_to_file()
     return template(index_html, author='Real Python')
 
