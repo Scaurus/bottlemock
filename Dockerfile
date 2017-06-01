@@ -1,4 +1,4 @@
-FROM python:3.5.2
+FROM python:3.5.2-slim
 
 MAINTAINER Roman Zhuravskiy <roman.zhuravskiy@gmail.com>
 
