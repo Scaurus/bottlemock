@@ -38,6 +38,7 @@ def mockdefault():
 
 
 @route("/bob")
+@post("/bob")
 def mockdefault():
     serelize_request = Serelize_Request()
     w = WriteToFileLog(serelize_request)
